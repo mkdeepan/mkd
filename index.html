@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<!-- ng-app="myApp" -->
+    <head>
+    <title>Welcome</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/taskman.css"/>
+    <link rel="stylesheet" type="text/css" href="css/toastr.css"/>
+    <link rel="stylesheet" type="text/css" href="css/sundaram.css"/>
+    <link rel="stylesheet" type="text/css" href="css/font.css"/>
+    <link rel="stylesheet" type="text/css" href="css/date/jquery-ui.css">
+    </head>
+    
+    <body>
+    <div class="navbar navbar-default" id="navbar">
+    <div class="container" id="navbar-container">
+		<div class="navbar-header">
+			<a href="#" class="navbar-brand">
+				<small>
+					<i class="glyphicon glyphicon glyphicon-log-out"></i>
+					M K Deepan Milk Center 
+				</small>
+			</a><!-- /.brand -->
+			
+		</div><!-- /.navbar-header -->
+		<div class="navbar-header pull-right" role="navigation">
+		  <div class="col-xs-12 col-sm-12 col-md-12" >
+		  <div class="col-xs-6">
+	        <a href="" class="btn btn-sm btn-danger nav-button-margin"> <i class="glyphicon glyphicon-book"></i>Developers</a>
+	     </div>
+	     <div class="col-xs-6">
+	        <a href="" class="btn btn-sm btn-warning nav-button-margin"> <i class="glyphicon glyphicon-download"></i>Webbehinds</a>
+	     </div>
+	     
+	     <!-- <div class="col-xs-6">
+	       <div>
+	        <a href="javascript:void(0)" class="btn btn-sm btn-warning nav-button-margin"> <i class="glyphicon glyphicon-log-out"></i>Logout</a>
+	       </div>
+	     </div> -->
+	     </div>
+		</div>
+	
+	</div>
+	</div>
+	
+   <div role="navigation">
+	  <div class="container">
+	   <div> <!--put session control here-->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+       </div>
+	    
+		 <div class="navbar-collapse collapse pad">
+		   <ul class="nav navbar-nav main-menu">
+		        <li><a class="tog" data-target=".navbar-collapse" ui-sref="home" data-toggle="collapse">Home</a></li>
+			     <li><a class="tog" data-target=".navbar-collapse" data-toggle="collapse">Sales</a></li>
+			     <li><a class="tog" data-target=".navbar-collapse" data-toggle="collapse">Purchase</a></li>
+			     <li><a class="tog" data-target=".navbar-collapse" data-toggle="collapse">Customers</a></li>
+			     <li><a class="tog" data-target=".navbar-collapse" data-toggle="collapse">Products</a></li>
+			     <li><a class="tog" data-target=".navbar-collapse" data-toggle="collapse">Vendors</a></li>
+			     <li><a class="tog" data-target=".navbar-collapse" data-toggle="collapse">Sheets</a></li>
+			     <li><a class="tog" data-target=".navbar-collapse" data-toggle="collapse">Collection</a></li>
+		   </ul>	      
+		 </div>
+      </div>
+      
+	    <div ui-view> </div>
+       
+	  </div>
+	</div>
+	<script data-main="js/angular/main" type="text/javascript" src="js/angular/require.js"></script>
+    </body>
+</html>

@@ -1,0 +1,122 @@
+
+
+<div class="col-sm-3" >
+	 <div id="accordion" class="panel-group" role="tablist" aria-multiselectable="true">
+	    <div class="panel panel-primary">
+	    <div class="panel-heading" role="tab" id="headingOne">
+	      <h4 class="panel-title">
+	        <a data-toggle="collapse" data-parent="#accordion" data-target="#salesMenu" aria-expanded="true" aria-controls="collapseOne">
+	          Sales
+	        </a>
+	      </h4>
+       </div>
+	       
+            <div id="salesMenu" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+             <div class="panel-body">
+              <table class="table">
+               <tbody>
+                <tr><td><a href="#/dsales">Direct Sales</a></td></tr>
+                <tr><td><a href="#/sales">Customer Sales</a></td></tr>
+                <tr><td><a href="#/bulk">Bulk Upload</a></td></tr>
+                <tr><td><a href="#/report">Report</a></td></tr>
+                <tr><td><a href="#/summary">Summary</a></td></tr>
+               </tbody>
+              </table>
+             </div>
+             </div>
+           
+	    </div>
+	 </div>
+</div>
+<div class="col-sm-9">
+   <div class="well">
+		<div class="widget-box" id="recent-box">
+			<div class="widget-header header-color-blue">
+				<div class="row">
+					<div class="col-sm-2" style="width:145px">
+						<h4 class="bigger lighter">
+							<i class="glyphicon glyphicon-align-justify"></i>
+							Customer
+						</h4>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+					  <!-- <select class="form-control" name="customer" id="customer" ng-model="taskCustomer" ng-options="i.customer_name for i in customers" ng-change="getDesc(taskCustomer,date)">
+						</select>-->
+						<input type="text" name="customer" list="cnames" id="customer" ng-model='customerName' class="form-control" Placeholder="Customer Name" />
+						<datalist id="cnames">
+						  <select class="form-control" name="customer" id="customer" ng-model="taskCustomer" ng-change="getDesc(taskCustomer,date)">
+						  <option ng-repeat="cus in customers" value="{{cus.customer_name}}">{{cus.customer_name}}</option>
+						</select>
+						</datalist>
+						
+					</div>
+					<div class="col-xs-12 col-sm-3" style="width:145px">
+					   <button ng-click="addNewClicked=!addNewClicked;" class="btn btn-sm btn-danger header-elements-margin"><i class="glyphicon  glyphicon-plus"></i>&nbsp;Add Indent</button>
+					</div>
+					<div class="col-xs-12 col-sm-3">
+					<!--<div pickadate ng-model="date" min-date="minDate" max-date="maxDate" disabled-dates='disabledDates'></div>-->
+					<input type="text" class="form-control search header-elements-margin" jqdatepicker ng-model="date" placeholder="Date" id="curdate">
+					
+					</div>
+				</div>
+			</div>
+			<div class="widget-body ">
+				<form ng-init="addNewClicked=false;" ng-if="addNewClicked" id="newTaskForm" class="add-task" >
+					<div class="form-actions">
+						<div class="input-group">
+						<!--<input type="text" class="form-control" name="comment" ng-model="taskInput" placeholder="Add New Task" ng-focus="addNewClicked">-->
+						   <div class="col-xs-12 col-sm-3 p-sales" >
+							<select class="form-control" name="product" id="product" ng-model="taskInput" ng-change="loadAmt(taskInput,'rate2')" >
+							   <option value="" >--select--</option>
+							   <option ng-repeat="task in tasks" value="{{task.id}}">{{task.product}}</option>
+							</select>
+							</div>
+							<div class="col-xs-12 col-sm-3 t-sales" >
+							   <input type="number" step="0.01" class="form-control" style="width:100%" ng-model="taskQuan" placeholder="Quantity" name="quantity" id="quantity" />
+							</div>
+							<div class="col-xs-12 col-sm-3 t-sales" >
+							   <input type="text" class="form-control" style="width:100%" value="{{taskRate}}" placeholder="Rate/unit" name="u_rate" id="u_rate" />
+							</div>
+							<div class="col-xs-12 col-sm-3 t-sales" >
+							<!--<p>{{taskInput*taskQuan}}</p>-->
+								<input type="text" class="form-control" style="width:100%" readonly value="{{taskRate * taskQuan}}" name="amount" placeholder="Amount" id="amount" />
+							</div>
+							<div class="col-xs-12 col-sm-3">
+								<button class="btn btn-default" type="submit" ng-click="addDirectTask(customerName,date,taskInput,taskQuan,taskRate)"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add New</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			<div class="task">
+				<div class="checkbox" ng-repeat="descs in descript">
+					<input 
+						type="checkbox"
+						value="{{descs.id}}"
+						/>
+					<div class="input-group">
+							<input type="text" class="form-control" readonly value="{{descs.product}} [{{descs.id}}]"/>
+						<div class="input-group-btn">
+							<input type="text" class="form-control" readonly value="{{descs.rate_per_unit}}" style="width:100%" name="amount1" placeholder="Amount" id="amount1" />
+						</div>
+						<div class="input-group-btn">
+							<input type="text" class="form-control" readonly value="{{descs.quantity}}" style="width:100%" placeholder="Quantity" name="quantity1" id="quantity1" />
+						</div>
+						<div class="input-group-btn">
+							<input type="text" class="form-control" readonly value="{{descs.total_amount}}" style="width:100%" name="amount1" placeholder="Amount" id="amount1" />
+						</div>
+						<div class="input-group-btn" >
+						   <a ng-click="deleteTask(descs.id,taskCustomer,date)" style="width:100%" class="pull-right"><i class="glyphicon glyphicon-trash"></i></a>
+						</div>
+					</div>
+					
+				</div>
+				<div class="checkbox">
+                <label class="pull-right" style="color:#307cee;">TOTAL :
+                <input align="right" type="text" style="width:30%;border:2px solid #000;" value="{{tsum}}"/>
+               </label>
+            </div>
+			</div>
+		</div>
+	 </div>
+	</div>
+</div>

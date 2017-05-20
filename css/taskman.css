@@ -1,0 +1,162 @@
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+a {
+color: #E1704B;
+transition: color 0.5s ease;
+}
+a:hover{
+    cursor:pointer;
+}
+h1{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5em;
+    font-weight: 500;
+}
+div.task label.checkbox{
+	border: 1px solid #DDD;
+	border-left-width: 3px;
+	padding: 9px 9px 9px 29px;
+	background-color: #FFF;
+	margin-top: 10px;
+	position: relative;
+	font-weight: normal;
+}
+
+.header-color-blue {
+    background: #307ECC;
+    border: 1px solid #307ECC;
+    box-sizing: content-box;
+    position: relative;
+    min-height: 38px;
+    padding: 0 12px 0;
+    color: #fff;
+}
+.header-color-blue-pur {
+    background: #DF7EBF;
+    border: 1px solid #307ECC;
+    box-sizing: content-box;
+    position: relative;
+    min-height: 38px;
+    padding: 0 12px 0;
+    color: #fff;
+}
+.filter{
+    margin-top: 6px;
+}
+.header-color-blue+.widget-body {
+border-color: #307ECC;
+margin-top: -10px;
+padding: 20px 10px;
+}
+.widget-body {
+border: 1px solid #CCC;
+border-top: 0;
+background-color: #FFF;
+}
+.strike{
+	text-decoration:line-through;
+}
+.header-elements-margin {
+	margin: 5px;
+}
+.add-task{
+	margin-top: 10px;
+}
+.nav-button-margin{
+	margin: 10px 20px 0 0;
+	width: 110px;
+}
+.navbar{
+border-radius: 0;
+background: #438EB9;
+color: #fff;
+}
+.navbar .navbar-brand {
+color: #FFF;
+font-size: 24px;
+text-shadow: none;
+}
+.p-sales{
+	width: 30%;
+}
+.t-sales{
+	width: 15%;
+}
+
+.task{
+}
+.widget-body {
+	border-color: #307ecc;
+    margin-top: -10px;
+    overflow-x: scroll;
+    padding: 20px 10px;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+.input-group input:first-child{
+	min-width: 100px;
+	}
+.input-group input:not(:first-child){
+	min-width: 80px;
+}
+.checkbox:nth-child(odd) input {
+	
+}
+.checkbox:nth-child(even) input{
+	background-color: #FFFFFF;
+}
+
+.navbar-toggle .icon-bar {
+	width: 15px !important;
+	background-color: #fff;
+}
+
+.main-menu > li {
+    font-size: 14px !important;
+    text-align: center !important;
+    background-color: #438EB9 !important;
+    border-bottom: 0.5px solid silver;
+    border-right: 0.5px solid silver;
+}
+.main-menu > li > a {
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+}
+.main-menu > li > a {
+	color: #FFFFFF;
+}
+
+.main-menu > li > a:hover, .main-menu > li > a:focus {
+	background-color: #FFFFFF !important;
+	color: #438EB9 !important;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+img{
+   height:150px !important;
+   width: 450px !important;
+}
+.sear-tab > li > a {
+	padding: 10px 150px !important;
+}
+
+@media screen and (max-width: 800px) {
+	
+.p-sales{
+	width: 100%;
+}
+.t-sales{
+	width: 100%;
+}
+.input-group input:first-child{
+	min-width: 200px;
+}
+.input-group > .input-group-btn > input{
+	min-width: 100px;
+}
+
+}
